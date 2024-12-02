@@ -1,0 +1,76 @@
+{% default product: blank %}
+{% default is_bundle: false %}
+
+<div class="sc-product-view">
+
+  <section class="sc-product-view__banner">
+    <div class="sc-product-view__banner__details sc-ps-spacious sc-pe-spacious">
+      <header class="sc-flex-col sc-justify-center">
+        <h1 data-product-title>{{ product.name }}</h1>
+        <div data-product-summary>{{ product.summary_content }}</div>
+      </header>
+      <div class="sc-bg-white sc-border-radius sc-p-base sc-shadow">
+      {%# Code %}
+        <div class="sc-font-small sc-shade-dark">
+          {{ product.product_code }}
+        </div>
+
+        {%# Price %}
+        {%- unless is_bundle %}
+          {% render "products/product/price", product: product, price_styles: "sc-font-bold" %}
+        {%- endunless %}
+
+        {%# Out of stock %}
+        {%- if product.out_of_stock? %}
+          <div class="sc-color-error sc-font-medium sc-mb">
+            {{ product.out_of_stock_text }}
+          </div>
+        {%- endif %}
+
+        {%# Restricted %}
+        {%- if product.restricted? %}
+          {% render "products/restricted", product: product %}
+        {%- endif %}
+
+        {%- unless is_bundle %}
+          {%# Variant Selector %}
+          {% render "products/product/variant_selector", product: product %}
+
+          {%# Add to cart %}
+          <div class="sc-mb">
+            {% render "products/product/add_to_cart", product: product %}
+          </div>
+
+          {%# Summary %}
+          <div class="sc-mb">
+            {%# Tax exclusion %}
+            {%- unless product.pricing.hide_price? or store.tax_inclusive? or product.restricted_text %}
+              {% if product.pricing.price > 0 %}
+                <div class="SC-ExcludesTax">
+                  {{ "products.show.excluding_tax" | t }}
+                </div>
+              {% endif %}
+            {% endunless %}
+          </div>
+
+          {%# Support %}
+          {%- render "products/product/support", product: current_product %}
+
+          {%# Social bar %}
+          {%- if theme_variables["product.social.share"] == "active" %}
+            <div class="sc-flex-col sc-gap-medium sc-mt-large">
+              <p class="sc-share-title sc-m-none sc-font-small sc-text-center">{{ "social.share.title" | t }}</p>
+              {%- render "shared/share_social_bar", bar_icons_style: "sc-flex sc-align-items-center sc-justify-center sc-gap-medium", bar_icon_size: "25px" %}
+            </div>
+          {%- endif %}
+        {%- endunless %}
+      </div>
+    </div>
+    <div class="sc-product-view__banner__image">
+      <img class="{% if product.master? %} sc-lazy-load{% endif %}" src="{{ product.image.massive_url }}" alt="{{ product.alt_text }}" data-src="{{ product.image.large_url }}">
+    </div>
+
+    <div class="sc-product-view__banner--overlay"></div>
+  </section>
+
+</div>

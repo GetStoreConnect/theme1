@@ -1,0 +1,56 @@
+{%- default product: blank %}
+
+{%- if product.pricing.has_price? %}
+  {%- form "add-to-cart", product_id: product.id, data-cart-form: true %}
+    {% if product.can_add_to_cart? %}
+      {%- assign button_disabled = false %}
+      {% if product.master? and product.variants.size > 0 or product.bookable? %}
+        {%- assign button_disabled = true %}
+      {%- endif %}
+      <div class="sc-add-to-cart">
+        <input type="hidden" name="quantity" value="1">
+        <div class="sc-flex-col sc-gap-small sc-expand">
+          <div class="sc-add-to-cart_pricing">
+          {%# Variable price picker %}
+          {%- if product.pricing.variable_pricing? %}
+            {%
+              render "donation/variable_pricing_picker",
+                pricing: product.pricing,
+                min: 1,
+                style_class: "SC-PricePicker-large",
+                field: form.fields["price"]
+            %}
+          {%- endif %}
+          </div>
+          <div class="sc-add-to-cart_action sc-flex sc-gap-small sc-expand">
+            {%# Add to cart %}
+            <input type="submit"
+                  formaction="{{ form.path | params: after: 'checkout' }}"
+                  class="SC-Button SC-Button-add sc-grow"
+                  {% if button_disabled %}disabled{% endif %}
+                  data-add-to-cart
+                  value="Donate now"
+                  data-disable-with="{{ product.add_to_cart_text }}"
+            />
+
+            {%- unless theme_variables["products.card.hide_purchase_button"] == false %}
+              {%# Buy now %}
+              <input type="submit"
+                    formaction="{{ form.path | params: after: 'checkout' }}"
+                    class="SC-Button SC-Button-add SC-Button-expanded-up-to-large sc-m-none"
+                    {% if button_disabled %}disabled{% endif %}
+                    data-buy-now
+                    value="{{ product.buy_it_now_text }}"
+                    data-disable-with="{{ product.buy_it_now_text }}"
+              />
+            {%- endunless %}
+          </div>
+        </div>
+      </div>
+    {%- endif %}
+  {% endform %}
+{%- else %}
+  <div class="sc-shade-neutral sc-mb-small">
+    {{ product.unavailable_text }}
+  </div>
+{%- endif %}

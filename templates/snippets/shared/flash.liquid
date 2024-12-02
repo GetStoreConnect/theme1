@@ -1,0 +1,31 @@
+<div data-flash-container>
+  {%- if current_flash and current_flash.notice != blank %}
+    <div class="sc-container">
+      <div class="SC-Notice sc-flash" data-notice data-toggle-visibility-target="flash" data-notice>
+        <div class="sc-flex sc-gap-medium sc-align-items-center sc-font-small">
+          <div class="sc-flash__action">
+            <button type="button" data-toggle-visibility="flash" class="sc-font-tiny sc-shade-dark sc-flex sc-gap-tiny">{% render "shared/icons/check" %}</button>
+          </div>
+          <div class="sc-flash__notice">
+            {{ current_flash.notice }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif %}
+
+  {%- if current_flash and current_flash.alert != blank %}
+    <div class="sc-container">
+      <div class="SC-Notice SC-Notice-alert sc-flash" data-toggle-visibility-target="flash" data-alert>
+        <div class="sc-flex sc-gap-medium sc-align-items-center sc-font-small">
+          <div class="sc-flash__action">
+            <button type="button" data-toggle-visibility="flash" class="sc-font-tiny sc-shade-dark sc-flex sc-gap-tiny">{% render "shared/icons/exclamation" %}</button>
+          </div>
+          <div class="sc-flash__notice">
+            {{ current_flash.alert }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif %}
+</div>
