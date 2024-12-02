@@ -1,0 +1,8 @@
+{%# Store level donations %}
+
+{%- liquid
+    assign totalDonations = current_store.data['Donations_Total__c'] | default: 0
+    assign donationTarget = current_store.data['Donation_Target__c'] | default: 0
+%}
+
+{%- render "products/product/progression_bar", total_donations: totalDonations, donation_target: donationTarget %}

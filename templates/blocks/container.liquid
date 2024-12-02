@@ -1,0 +1,38 @@
+{% assign alignment = content_block.alignment | default: blank %}
+
+<section
+  class="sc-content-block-container"
+  id="{% if content_block.identifier != blank %}sc-content-block-container-{{ content_block.identifier }}{% endif %}"
+  data-cb="{{ content_block.identifier }}">
+
+  {%- if content_block.title != blank or content_block.subtitle != blank %}
+    <header class="sc-content-block-container_header">
+      <div class="sc-content-block-container_header_wrapper{% if alignment == 'center-text' %} sc-text-center sc-ms-auto{% endif %}">
+        {%- if content_block.title != blank %}
+          <h2 class="sc-content-block-container_header_title">{{ content_block.title }}</h2>
+        {%- endif %}
+        {%- if content_block.subtitle != blank %}
+          <div class="sc-content-block-container_header_subtitle">
+            {{ content_block.subtitle }}
+          </div>
+        {%- endif %}
+      </div>
+    </header>
+  {%- endif %}
+
+  <div class="sc-content-block-container_body{% if content_block.layout_style != blank %} sc-{{ content_block.layout_style }}{% endif %}{% if content_block.sub_type != blank %} sc-{{ content_block.sub_type }}{% endif %}">
+    {%- for child in content_block.children %}
+      {{ child.render }}
+    {%- endfor %}
+  </div>
+
+  {%- if content_block.link_label != blank and content_block.link_target != blank %}
+    <footer class="sc-content-block-container_footer">
+      <div class="sc-content-block-container_footer_wrapper{% if alignment == 'center-text' %} sc-text-center sc-ms-auto{% endif %}">
+        <a class="SC-Button SC-Button-primary sc-shadow" href="{{ content_block.link_target }}">
+          {{ content_block.link_label | escape }}
+        </a>
+      </div>
+    </footer>
+  {%- endif %}
+</section>
