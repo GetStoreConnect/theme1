@@ -1,0 +1,5 @@
+{%- default price_styles: blank %}
+
+{% if product.pricing.has_price? %}
+  {% render "products/product/price_item", product: product, price_styles: price_styles %}
+{% endif %}

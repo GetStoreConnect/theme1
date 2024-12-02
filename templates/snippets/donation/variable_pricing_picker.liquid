@@ -1,0 +1,59 @@
+{%- liquid 
+      default pricing: blank
+      default data: blank
+      default style_class: blank 
+      default field_name: "quantity" 
+      default field_id: "quantity" 
+      default field: blank 
+  
+      if field != blank
+        assign field_name = field.name
+        assign field_id = field.id 
+      endif
+%}
+
+{%- require "scripts/donation-picker.js" %}
+
+{%- if pricing != blank %}
+  {%- assign show_picker = true %}
+  {%- if pricing.variable_pricing? and pricing.variable_pricing_amounts.size > 0 %}
+    {%- assign show_picker = true %}
+  {%- endif %
+  {%- assign default = pricing.variable_pricing_amounts.first | default: pricing.sale_price | default: pricing.original_price %}
+
+  <div class="{{ style_class }} sc-expand sc-flex-col sc-gap-small sc-mb-small" data-donation-picker>
+    <ul class="SC-Menu sc-gap-tiny" data-donation-list>
+      {%- for amount in pricing.variable_pricing_amounts %}
+        <li class="SC-Menu_item">
+          <button 
+            class="SC-Label-subtle sc-ps sc-pe-small sc-font-base sc-font-bold"
+                  value="{{ amount | money, unit: '' }}"
+                  type="button" data-donation-list-option>
+            {{ amount | money }}
+          </button>
+        </li>
+      {%- endfor %}
+
+      {%- if pricing.variable_pricing_custom_allowed? %}
+        <li class="SC-Menu_item">
+          <button class="SC-Label-subtle sc-ps sc-pe-small sc-font-base sc-font-bold"
+                  value=""
+                  type="button" data-donation-list-option data-donation-custom-amount>
+            {{ "shared.variable_pricing_picker.other_amount" | t }}
+          </button>
+        </li>
+      {%- endif %}
+    </ul>
+    {%# To do set min amount dynamically %}
+    <input type="number"
+      name="{{ field_name }}"
+      id="{{ field.id }}"
+      min="{{ pricing.price }}"
+      value="{{ defaultPrice }}"
+      class="SC-Field_input sc-field-outline sc-no-arrows"
+      placeholder="{{ "shared.variable_pricing_picker.placeholder" | t }}"
+      data-donation-input
+      {{ data }}
+    />
+  </div>
+{%- endif %}

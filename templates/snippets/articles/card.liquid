@@ -1,0 +1,22 @@
+<div class="SC-CardGrid_item">
+  <a href="{{ article.path }}" class="sc-article-card sc-mb-spacious sc-p-medium sc-border-radius sc-shadow">
+    {%- if article.hero_image != blank %}
+      <div class="sc-article-card__image">
+        <img class="sc-lazy-load sc-border-radius" src="{{ article.hero_image.small_url }}" data-src="{{ article.hero_image.medium_url }}" loading="lazy">
+      </div>
+    {%- endif %}
+    <h3 class="sc-article-card__heading">
+      {{ article.title }}
+    </h3>
+    {%- if article.publish_on != blank %}
+      <div class="sc-article-card__date sc-font-tiny sc-mb-micro">
+        {{ article.publish_on | date: "%B %-d, %Y" }}
+      </div>
+    {%- endif %}
+    {%- if article.summary_content != blank %}
+      <div class="sc-article-card__summary sc-font-small sc-mt-small">
+        {{ article.summary_content }}
+      </div>
+    {%- endif %}
+  </a>
+</div>

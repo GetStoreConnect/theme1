@@ -1,0 +1,57 @@
+{% default total_donations: 0 %}
+{% default donation_target: 0 %}
+
+<section class="SC-ContentBlockContainer">
+  <div class="SC-ContentBlockContainer_body sc-p-none">
+    {%- liquid 
+        assign totalDonations = total_donations
+        assign donationTarget = donation_target
+
+        if donationTarget > 0
+          assign progressValue = totalDonations | divided_by: donationTarget | times: 100
+          if progressValue > 100
+            assign progressValue = 100
+          endif
+        else
+          assign progressValue = 0
+        endif
+     %}
+    <div class="sc-flex-col sc-gap">
+      <div class="sc-progress-bar sc-flex sc-justify-center sc-ms-auto sc-shadow sc-expand">
+        <div class="sc-progress-bar--bg sc-expand">
+          {% if progressValue > 0 %}
+            <div data-donations="{{  progressValue }}"
+              class="sc-progress-bar__value sc-flex sc-justify-center sc-align-items-center" 
+              style="{% if progressValue < 1 %}min-width: calc({{ progressValue | append: '%' }} + 1%);{% endif %}"></div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="sc-flex sc-justify-space-between sc-font-medium sc-ps-small">
+        <p class="sc-progress-bar__item sc-text-center sc-flex-wrap sc-flex sc-justify-center sc-gap-tiny">
+          <span class="sc-shade-darkest">{{ progressValue | round: 0 | append: "%" }}</span>
+          <span>{{ "progress.donated.label" | t }}</span>
+        </p>
+        <p class="sc-progress-bar__item sc-text-center sc-flex-wrap sc-flex sc-justify-center sc-gap-tiny">
+          <span class="sc-shade-darkest">{{ totalDonations | money, compact: true }}</span>
+          <span>{{ "progress.raised.label" | t }}</span>
+        </p>
+        <p class="sc-progress-bar__item sc-text-center sc-flex-wrap sc-flex sc-justify-center sc-gap-tiny">
+          <span class="sc-shade-darkest">{{ donationTarget | money, compact: true }}</span>
+          <span class="sc-md:ml-tiny">{{ "progress.target.label" | t }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @-webkit-keyframes widthBackground {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: {{ progressValue | round: 2 | append: "%" }};
+    }
+  }
+</style>

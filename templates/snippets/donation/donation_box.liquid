@@ -1,0 +1,40 @@
+{% default product: blank %}
+{% default id: blank %}
+{% default styles: blank %}
+
+{%- render "scripts/tabs.js" %}
+
+<div class="sc-banner_box{% if styles != blank %} {{ styles }}{% endif %}" data-size="{{ product.variants.size }}">
+  <div class="sc-banner_box_container sc-p-base">
+    <h3 class="sc-font-xlarge">{{ "donation.box.title" |t }}</h3>
+    {%- if product.variants.size > 0 %}
+      <div data-tabs="{{ id }}">
+        {%- paginate product.variants by 3 %}
+          <div class="sc-flex sc-gap-tiny">
+            {%- for option in product.variant_options %}
+              {%- for type in option.variant_types %}
+                {%- for choice in type.variant_choices %}
+                  <button class="sc-tab__trigger" type="button" data-tab-trigger="{{ option.variant.identifier }}">{{ choice.label }}</button>
+                {%- endfor %}
+              {%- endfor %}
+            {%- endfor %}
+          </div>
+
+          {%- for option in product.variant_options %}
+            <div class="sc-tab__content sc-pt sc-hide" data-tab="{{ option.variant.identifier }}">
+              <div class="sc-tab__content__summary sc-mb-medium">{{ option.variant.summary_content }}</div>
+                {% render "donation/add_to_cart", product: option.variant %}
+            </div>
+          {%- endfor %}
+        {%- endpaginate %}
+      </div>
+    {%- else %}
+      <div class="sc-tab__content sc-border-radius" data-tab="{{ product.identifier }}">
+        <div class="sc-tab__content__summary sc-mb-medium">{{ product.summary_content }}</div>
+        <div>
+          {% render "donation/add_to_cart", product: product %}
+        </div>
+      </div>
+    {%- endif %}
+  </div>
+</div>
