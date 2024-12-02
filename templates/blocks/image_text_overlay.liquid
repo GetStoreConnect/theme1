@@ -1,0 +1,62 @@
+{%- assign product = content_block.products[0] | default: blank %}
+{%- assign type = content_block.sub_type | default: blank %}
+
+<div
+  class="SC-ContentBlock SC-ImageTextOverlay sc-pos-relative{% if product != blank %} sc-bottom-offset{% endif %}"
+  id="{% if content_block.identifier != blank %}SC-ContentBlock-{{ content_block.identifier }}{% endif %}"
+  data-cb="{{ content_block.identifier }}">
+  <div class="sc-banner{% if type != blank %} {{ type }}{% endif %}"{% if content_block.image != blank %} style="background-image: url('{{ content_block.image.massive_url }}')"{% endif %}>
+    <div class="sc-banner_container{% if content_block.alignment != blank %} sc-{{ content_block.alignment }}{% endif %}">
+
+      <div class="sc-one-to-two-column sc-pe-base">
+        <div class="sc-banner_content">
+
+          {%- unless content_block.title == blank %}
+            <h2 class="sc-banner_heading">
+              {{ content_block.title }}
+            </h2>
+          {%- endunless %}
+
+          {%- unless content_block.subtitle == blank %}
+            <div class="sc-banner_subheading">
+              {{ content_block.subtitle }}
+            </div>
+          {%- endunless %}
+
+          {%- unless content_block.content == blank %}
+            <div class="sc-mt-small">
+              {{ content_block.content }}
+            </div>
+          {%- endunless %}
+
+          {%- unless content_block.link_label == blank or content_block.link_target == blank %}
+            <a class="sc-banner_cta" href="{{ content_block.link_target }}">
+              {{ content_block.link_label }}
+            </a>
+          {%- endunless %}
+        </div>
+
+        {%- if product != blank %}
+          {%- liquid 
+              if type == 'offset'
+                assign styles = 'sc-shadow sc-shade-darkest'
+              else 
+               assign styles = 'sc-shadow'
+              endif
+          %}
+          {%- render "donation/donation_box", product: product, id: content_block.identifier, styles: styles %}
+        {%- endif %}
+      </div>
+
+    {%- if content_block.video != blank %}
+      <div class="sc-banner_video sc-expand">
+        <video autoplay muted loop>
+          <source src="{{ content_block.video.url }}" type="video/mp4">Your browser does not support the video tag.
+       </video>
+      </div>
+    {%- endif %}
+  </div>
+  {%- if type == 'offset' %}
+    <div class="sc-banner_overlay"></div>
+  {%- endif %}
+</div>
