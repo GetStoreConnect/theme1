@@ -1,0 +1,17 @@
+Key,Value
+accounts.orders.show.order_summary.header,Donation Summary
+cart.header,Donation Cart
+checkout.customer_information.header,Donor information
+donation.box.title,Become a supporter
+header.dropdowns.cart.heading,Donations
+products.in_your_cart.header,In your basket
+products.related_products.title,Related Campaigns
+products.variant_options.no_stock,Donation option not available
+progress.donated.label,Donation
+progress.raised.label,Raised
+progress.target.label,Target
+sc.products.default_text.add_to_cart,Add to basket
+sc.products.default_text.buy_it_now,Donate now
+shared.variable_pricing_picker.label,Amount
+social.share.title,Share this campaign
+top.header.cta_label,Get started
