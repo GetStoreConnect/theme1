@@ -16,21 +16,12 @@
             <circle cx="50%" cy="50%" r="20%" fill="rgba(0,0,0,0.05)"/>
           </svg>
         {%- endunless %}
-        {%- unless content_block.title == blank or content_block.content == blank %}
+        {%- if content_block.content != blank %}
           <div class="sc-image_caption">
-            {%- if content_block.title != blank %}
-              <h3>{{ content_block.title }}</h3>
-            {%- endif %}
-
-            {%- if content_block.content != blank %}
-              <div>
-                {{ content_block.content }}
-              </div>
-            {%- endif %}
+            {{ content_block.content }}
           </div>
-        {%- endunless %}
-
-        {%- if content_block.content != blank or content_block.content != blank %}
+        {%- endif %}
+        {%- if content_block.content != blank %}
           <div class="sc-image-overlay"></div>
         {%- endif %}
       </a>

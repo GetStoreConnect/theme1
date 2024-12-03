@@ -45,18 +45,15 @@
       {%- endif %}
     </ul>
     {%# To do set min amount dynamically %}
-    <div class="SC-Field_label sc-expand sc-flex sc-field-outline">
-      <span class="SC-Field_currency">{{ current_store.currency_symbol }}</span>
-      <input type="number"
-        name="{{ field_name }}"
-        id="{{ field.id }}"
-        min="{{ pricing.price }}"
-        value="{{ defaultPrice }}"
-        class="SC-Field_input sc-no-arrows sc-font-medium sc-font-bold sc-grow"
-        placeholder="{{ "shared.variable_pricing_picker.placeholder" | t }}"
-        data-donation-input
-        {{ data }}
-      />
-    </div>
+    <input type="number"
+      name="{{ field_name }}"
+      id="{{ field.id }}"
+      min="{{ pricing.price }}"
+      value="{{ defaultPrice }}"
+      class="SC-Field_input sc-field-outline sc-no-arrows sc-font-medium sc-font-bold"
+      placeholder="{{ "shared.variable_pricing_picker.placeholder" | t }}"
+      data-donation-input
+      {{ data }}
+    />
   </div>
 {%- endif %}
