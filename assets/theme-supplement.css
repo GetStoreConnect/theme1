@@ -1632,3 +1632,24 @@ img {
 .sc-field-outline:focus-within {
   outline-color: var(--sc-color-primary);
 }
+
+.SC-TestimonialSlideshow {
+  padding: var(--sc-spacing-xlarge) 0;
+  margin: 0;
+  background-color: var(--sc-shade-lightest);;
+  border-radius: var(--sc-border-radius);
+}
+
+.SC-TestimonialSlideshow .tns-horizontal.tns-subpixel > .tns-item {
+  vertical-align: top;
+}
+
+.SC-TestimonialSlideshow .sc-imageBesideText {
+  display: flex;
+  justify-content: center;
+}
+
+.SC-Slideshow .sc-imageBesideText .sc-imageBesideText_image {
+  border-radius: 50%;
+  width: 200px;
+}
