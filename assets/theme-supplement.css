@@ -1633,23 +1633,32 @@ img {
   outline-color: var(--sc-color-primary);
 }
 
-.SC-TestimonialSlideshow {
+.sc-testimonial-slideshow {
   padding: var(--sc-spacing-xlarge) 0;
   margin: 0;
-  background-color: var(--sc-shade-lightest);;
+  background-color: hsla(var(--sc-color-primary-h), var(--sc-color-primary-s), 98%, 1);
   border-radius: var(--sc-border-radius);
 }
 
-.SC-TestimonialSlideshow .tns-horizontal.tns-subpixel > .tns-item {
+.sc-testimonial-slideshow .tns-horizontal.tns-subpixel > .tns-item {
   vertical-align: top;
 }
 
-.SC-TestimonialSlideshow .sc-imageBesideText {
+.sc-testimonial-slideshow .sc-imageBesideText {
   display: flex;
   justify-content: center;
 }
 
-.SC-Slideshow .sc-imageBesideText .sc-imageBesideText_image {
+.sc-testimonial-slideshow .sc-imageBesideText .sc-imageBesideText_image {
   border-radius: 50%;
   width: 200px;
+}
+
+.sc-testimonial-slideshow .tns-controls button[data-controls=prev],
+.sc-testimonial-slideshow .tns-controls button[data-controls=next] {
+  top: 45%;
+}
+
+.sc-testimonial-slideshow .tns-nav {
+  bottom: -25px;
 }

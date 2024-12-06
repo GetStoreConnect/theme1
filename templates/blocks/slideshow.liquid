@@ -5,9 +5,9 @@
   {%- endfor %}
 {%- endcapture %}
 
-<section class="SC-TestimonialSlideshow" data-cb="{{ content_block.identifier }}">
+<section class="sc-testimonial-slideshow" data-cb="{{ content_block.identifier }}">
   {%- if children_content != blank %}
-    <div class="Slider" data-slideshow="{{ content_block.identifier }}">
+    <div class="sc-testimonial-slideshow_body" data-slideshow="{{ content_block.identifier }}">
       {{ children_content }}
     </div>
   {%- else %}
