@@ -1,16 +1,12 @@
-# NFP Theme (Power of Us)
+# Simple Donation Theme 
 
-The NFP theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
+The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
 ![Screenshot](#)
 
-# NFP Theme Documentation
-
-The NFP theme is packed with enhanced features and customizable templates to help you create compelling content for your nonprofit website. Whether you're a developer or a non-developer, this guide will help you get started.
-
 ## Out-of-the-Box Features and Custom Templates
 
-The NFP theme contain enhanced features and customizable templates to help you create compelling content for your nonprofit website. Whether you're a developer or a non-developer, this guide will help you get started.
+The Simple Donation theme is packed with enhanced features and customizable templates to help you create compelling content for your nonprofit website. Whether you're a developer or not, this guide will help you get started.
 
 ## Out-of-the-Box Features and Custom Templates
 
@@ -38,7 +34,7 @@ Include quick-access links for essential actions like:
 
 - **Get Started**
     - Use [`top.header.cta.target`](http://top.header.cta.target) to set the link target
-    - Use `top.header.cta_label` translation key to set the l
+    - Use `top.header.cta_label` translation key to set the label
 - **Account Access**
 - **Shopping Cart**
 
@@ -67,7 +63,7 @@ Highlight key campaigns with a featured donations carousel. Showcase outstanding
 > *Note: The progress bar selector and page templates picklist may require minor additional configuration for your organization—no advanced setup needed.*
 > 
 
-## How to Start Building Your Content with the NFP Theme
+## How to Start Building Your Content with the Simple Donation Theme
 
 Before getting started, note that some templates will require additional configuration within your organization upon installation. For example, you’ll need to add the following templates to your template picklist:
 
@@ -207,7 +203,7 @@ For example:
 - Replace “cart” with “basket.”
 - Use “donor” instead of “customer.”
 
-The NFP theme includes a predefined set of translation keys, but you can extend them using our base theme as a reference.
+The Simple Donation theme includes a predefined set of translation keys, but you can extend them using our base theme as a reference.
 
 [Learn More](https://github.com/GetStoreConnect/base-theme/blob/main/translations/en.default.csv)
 
