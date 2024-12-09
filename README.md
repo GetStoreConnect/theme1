@@ -51,6 +51,8 @@ Show the progress of your fundraising goals with a visually appealing progress b
 
 ### 8. Accordion
 
+![simple-donation-accordions](https://github.com/user-attachments/assets/ad81af5d-38d8-4c1e-8a5f-85dd76c2bd32)
+
 Organize and display custom content with an interactive accordion. Perfect for:
 
 - **FAQ sections** to address common questions.
