@@ -1,4 +1,4 @@
-# Simple Donation Theme 
+<img width="1161" alt="simple-donation-card" src="https://github.com/user-attachments/assets/0da70a11-8534-4881-a0e5-69aa3cf3bb15"># Simple Donation Theme 
 
 The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
@@ -12,11 +12,11 @@ The Simple Donation theme is packed with enhanced features and customizable temp
 
 ### 1. Image with Overlay and Donation Box
 
-![Screenshot](#)
-
 Highlight impactful visuals by adding a donation box directly over images, making it easy for users to contribute.
 
 ### 2. Single Campaign Cards
+
+<img width="1161" alt="simple-donation-card" src="https://github.com/user-attachments/assets/0200274b-eb17-4e3c-ab89-ddbed29cf3e3">
 
 Showcase individual campaigns with dedicated cards. Link a product to the content block, and the template will handle the rest for you.
 
@@ -26,9 +26,13 @@ Allow users to select their own donation amount with a flexible pricing picker. 
 
 ### 4. Images with Titles and Content
 
+<img width="1243" alt="simple-donation-images" src="https://github.com/user-attachments/assets/81490187-da21-4511-b70f-ec0d2d8ead18">
+
 Add titles and supporting text to your images to create visually compelling sections that deliver powerful messages.
 
 ### 5. Top Header
+
+<img width="1277" alt="simple-donation-top-header" src="https://github.com/user-attachments/assets/25049216-fd3c-4a7d-80eb-7b6f7d0d66c1">
 
 Include quick-access links for essential actions like:
 
@@ -186,8 +190,6 @@ Once set up, create a content block using the donation progress bar template and
 ---
 
 ### Image
-
-![Screenshot](#)
 
 Single images now support the following fields:
 
