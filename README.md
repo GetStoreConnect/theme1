@@ -8,8 +8,6 @@ The Simple Donation theme is specifically designed for nonprofit organizations l
 
 The Simple Donation theme is packed with enhanced features and customizable templates to help you create compelling content for your nonprofit website. Whether you're a developer or not, this guide will help you get started.
 
-## Out-of-the-Box Features and Custom Templates
-
 ### 1. Image with Overlay and Donation Box
 
 Highlight impactful visuals by adding a donation box directly over images, making it easy for users to contribute.
