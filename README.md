@@ -1,4 +1,4 @@
-<img width="1161" alt="simple-donation-card" src="https://github.com/user-attachments/assets/0da70a11-8534-4881-a0e5-69aa3cf3bb15"># Simple Donation Theme 
+# Simple Donation Theme 
 
 The Simple Donation theme is specifically designed for nonprofit organizations looking to deliver an optimized user experience, perfect for quickly capturing donations or selling their products efficiently. With this theme, you can amplify your mission's impact by streamlining contributions and purchases.
 
