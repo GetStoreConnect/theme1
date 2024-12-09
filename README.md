@@ -12,11 +12,11 @@ The Simple Donation theme is packed with enhanced features and customizable temp
 
 ### 1. Image with Overlay and Donation Box
 
-![Screenshot](#)
-
 Highlight impactful visuals by adding a donation box directly over images, making it easy for users to contribute.
 
 ### 2. Single Campaign Cards
+
+<img width="1161" alt="simple-donation-card" src="https://github.com/user-attachments/assets/0200274b-eb17-4e3c-ab89-ddbed29cf3e3">
 
 Showcase individual campaigns with dedicated cards. Link a product to the content block, and the template will handle the rest for you.
 
@@ -26,9 +26,13 @@ Allow users to select their own donation amount with a flexible pricing picker. 
 
 ### 4. Images with Titles and Content
 
+<img width="1243" alt="simple-donation-images" src="https://github.com/user-attachments/assets/81490187-da21-4511-b70f-ec0d2d8ead18">
+
 Add titles and supporting text to your images to create visually compelling sections that deliver powerful messages.
 
 ### 5. Top Header
+
+<img width="1277" alt="simple-donation-top-header" src="https://github.com/user-attachments/assets/25049216-fd3c-4a7d-80eb-7b6f7d0d66c1">
 
 Include quick-access links for essential actions like:
 
@@ -47,9 +51,13 @@ Easily choose from various page templates to suit your needs:
 
 ### 7. Progress Bar
 
+<img width="1278" alt="simple-donation-progress-bar" src="https://github.com/user-attachments/assets/953f3fdf-1ff6-414c-a364-adca042a8e5b">
+
 Show the progress of your fundraising goals with a visually appealing progress bar. Use it for individual campaigns or display a global campaign progress tracker to keep donors engaged.
 
 ### 8. Accordion
+
+![simple-donation-accordions](https://github.com/user-attachments/assets/ad81af5d-38d8-4c1e-8a5f-85dd76c2bd32)
 
 Organize and display custom content with an interactive accordion. Perfect for:
 
@@ -182,8 +190,6 @@ Once set up, create a content block using the donation progress bar template and
 ---
 
 ### Image
-
-![Screenshot](#)
 
 Single images now support the following fields:
 
