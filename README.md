@@ -47,6 +47,8 @@ Easily choose from various page templates to suit your needs:
 
 ### 7. Progress Bar
 
+<img width="1280" alt="simple-donation-progress-bar" src="https://github.com/user-attachments/assets/07fe6215-36ce-4ae5-b5af-8e391716f17e">
+
 Show the progress of your fundraising goals with a visually appealing progress bar. Use it for individual campaigns or display a global campaign progress tracker to keep donors engaged.
 
 ### 8. Accordion
