@@ -111,8 +111,6 @@ Each template supports specific fields and options when setting up your content 
 
 ### Donation Card
 
-![Screenshot](#)
-
 **Primary Uses:**
 
 1. Relate a product to dynamically populate the image and content.
